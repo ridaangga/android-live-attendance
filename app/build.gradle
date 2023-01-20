@@ -64,7 +64,7 @@ dependencies {
     //Circle ImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 //
-    //Hawk
+    //Hawk, Library storage untuk android.
     implementation "com.orhanobut:hawk:2.0.1"
 //
     // OkHttp
