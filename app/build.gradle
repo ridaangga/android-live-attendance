@@ -55,8 +55,8 @@ dependencies {
 //    //Anko
 //    implementation 'org.jetbrains.anko:anko-commons:0.10.8'
 //
-//    // material calendar view
-//    implementation 'com.applandeo:material-calendar-view:1.8.0-rc01'
+    // material calendar view
+    implementation 'com.applandeo:material-calendar-view:1.8.0-rc01'
 //
     //Circle ImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
