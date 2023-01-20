@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.liveattendanceapp.R
+import com.example.liveattendanceapp.databinding.FragmentAttendanceBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -18,13 +19,19 @@ class AttendanceFragment : Fragment(), OnMapReadyCallback {
     private var mapAttendance: SupportMapFragment? = null
 
     private var map: GoogleMap? = null
+    private var binding: FragmentAttendanceBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attendance, container, false)
+        binding = FragmentAttendanceBinding.inflate(inflater, container, false)
+        return binding?.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,8 +49,8 @@ class AttendanceFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap
         //Coordinate Bisa di ganti sesuai tempat teman-teman masing-masing
-        val sydney = LatLng(-6.918026, 106.931707)
-        //val sydney = LatLng(-33.852, 151.211)
+        //val sydney = LatLng(-6.918026, 106.931707)
+        val sydney = LatLng(-33.852, 151.211)
         map?.addMarker(
             MarkerOptions()
                 .position(sydney)
